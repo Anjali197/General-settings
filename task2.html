@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task-2</title>
+    <link rel="stylesheet" href="task2.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="settings">
+        <iconify-icon icon="carbon:settings" id="icon"></iconify-icon>
+        <h1>SETTINGS</h1>
+      </div>
+      <div class="headings">
+        <p>General</p>
+        <p>Notifications</p>
+        <p>Statuses</p>
+        <p>Sources</p>
+        <p>Custom Fields</p>
+        <p>Account Users</p>
+        <p>Tag Management</p>
+        <p>Tokens</p>
+      </div>
+
+      <div class="result">
+        <div class="text-box">
+          <label for="name">Name</label><br />
+          <input type="text" class="text-holder" name="name1" id="text1" />
+          <h3 id="msg1"></h3>
+          <input type="text" class="text-holder" name="name2" id="text2" />
+          <h3 id="msg2"></h3>
+
+          <label for="phone">Phone</label><br />
+          <input type="text" class="text-holder" name="phone" id="text3" />
+          <h3 id="msg3"></h3>
+          <label for="company">Company</label><br />
+          <input type="text" class="text-holder" name="company" id="text4" />
+          <h3 id="msg4"></h3>
+        </div>
+        <div class="result-box" id="show">
+          <h2 id="h2"></h2>
+          <button id="close" onclick="removebtn()">X</button>
+        </div>
+      </div>
+      <br />
+      <br />
+      <div class="cancel-save">
+        <span id="cancel">Cancel</span>
+        <button id="save" type="submit" onclick="result()">Save</button>
+      </div>
+    </div>
+  </body>
+  <script src="task2.js"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+</html>
