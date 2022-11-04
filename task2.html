@@ -23,21 +23,32 @@
         <p>Tag Management</p>
         <p>Tokens</p>
       </div>
-
+<div class="valid">
+  <form   onsubmit="validateform(); return false;" >
       <div class="result">
         <div class="text-box">
-          <label for="name">Name</label><br />
+          <div class="part1">
+            <label for="name">Name</label>
           <input type="text" class="text-holder" name="name1" id="text1" />
-          <h3 id="msg1"></h3>
-          <input type="text" class="text-holder" name="name2" id="text2" />
-          <h3 id="msg2"></h3>
-
-          <label for="phone">Phone</label><br />
+          <h6 id="msg1"></h6>
+          </div>
+          <div class="part2">
+            <input type="text" class="text-holder" name="name2" id="text2" />
+          <h6 id="msg2"></h6>
+          </div>
+          
+         <div class="part3">
+          <label for="phone">Phone</label>
           <input type="text" class="text-holder" name="phone" id="text3" />
-          <h3 id="msg3"></h3>
-          <label for="company">Company</label><br />
+          <h6 id="msg3"></h6>
+         </div>
+          <div class="part4">
+            <label for="company">Company</label>
           <input type="text" class="text-holder" name="company" id="text4" />
-          <h3 id="msg4"></h3>
+          <h6 id="msg4"></h6>
+          </div>
+          
+        
         </div>
         <div class="result-box" id="show">
           <h2 id="h2"></h2>
@@ -46,10 +57,12 @@
       </div>
       <br />
       <br />
-      <div class="cancel-save">
-        <span id="cancel">Cancel</span>
-        <button id="save" type="submit" onclick="result()">Save</button>
+      <div class="cancel-save" >
+        <button id="cancel"  onclick="cancelbtn()">Cancel</button>
+        <button id="save" type="submit" onclick="result()" >Save</button>
       </div>
+    </div>
+  </form>
     </div>
   </body>
   <script src="task2.js"></script>
