@@ -16,8 +16,14 @@ function result(){
         showresult.style.color="red";
         resultEnter.style.color='black';
         closebtn.style.display="block";
+        errormsg1.style.display="none";
+        errormsg2.style.display="none";
+        errormsg3.style.display="none";
+        errormsg4.style.display="none";
     }
-
+// if(errormsg1 && errormsg2 && errormsg3 && errormsg4){
+//     showresult.style.visibility="hidden";
+// }
     
     // // alert(1);
     // validateform();
@@ -49,19 +55,21 @@ function validateform(){
     var name2=document.getElementById("text2").value;
     var phone=document.getElementById("text3").value;
     var company=document.getElementById("text4").value;
-    var letters=/^{a-zA-Z}$/;
+    var letters="/^{a-zA-Z}$/";
+    
+    console.log(name1);
     
     if(name1==""){
         errormsg1.innerHTML="*please enter the name";
         
-    }else if(name1.match(letters)){
-        errormsg1.innerHTML="*user name must containonly alphabets"
+    }else if(name1.match("^[a-zA-Z]*$")){
+        errormsg1.innerHTML="*user name must contain only alphabets"
     }
     if(name2==""){
         errormsg2.innerHTML="*please enter the name";
     }
     else if(name2.match(letters)){
-        errormsg2.innerHTML="*user name must containonly alphabets"
+        errormsg2.innerHTML="*user name must contain only alphabets"
     }
     if(phone==""){
         errormsg3.innerHTML="*please enter the phone number"
@@ -70,7 +78,7 @@ function validateform(){
         errormsg3.innerHTML="*phone number must be 10 character only"
     }
     if(company==""){
-        errormsg4.innerHTML="*please enter the phone name"
+        errormsg4.innerHTML="*please enter the  name"
     }
     else{
 
@@ -80,10 +88,105 @@ function validateform(){
 }
 var errormsg1=document.getElementById("msg1");
 function  cancelbtn(){
-    console.log(cancelbtn)
-    if(errormsg1.innerHTML=="*please enter the name"){
-        errormsg1.style.display="block";
+   
+    // if(errormsg1.innerHTML=="*please enter the name"){
+    //     errormsg1.style.display="none";
 
+    // }
+    //  if(errormsg2.innerHTML="*please enter the name"){
+    //     errormsg2.style.display="none";
+    // }
+    
+    // if(errormsg3.innerHTML="*please enter the phone number"){
+    //     errormsg3.style.display="none";
+    // }
+    
+    // if(errormsg4.innerHTML="*please enter the  name"){
+    //     errormsg4.style.display="none";
+    // }
+    if( errormsg1 && errormsg2 && errormsg3 && errormsg4){
+            errormsg1.style.display="none";
+            errormsg2.style.display="none";
+            errormsg3.style.display="none";
+            errormsg4.style.display="none";
+            errormsg1.style.display="none";
+        }
+
+
+
+    
+}
+function validationPhone(){
+    
+    var newphone=document.getElementById("text3").value;
+    var phone=document.getElementById("text3").value;
+    console.log(newphone);
+    if(isNaN(newphone)){
+        document.getElementById("text3").value  =newphone.replace(/^[a-zA-Z]*$/g, "");
+    }
+    if(phone.length>10){
+        errormsg3.innerHTML="*phone number must be 10 character only"
+
+}
+else{
+    errormsg3.innerHTML=" "
+}
+
+
+if(isNaN(newphone)){
+    document.getElementById("text3").value  =newphone.replace(/^[a-zA-Z]*$/g, "");
+}
+}
+
+function validatename(){
+    var name1=document.getElementById("text1").value;
+    
+    if(!isNaN(name1)){
+        document.getElementById("text1").value  =name1.replace(/^[0-9]/g, "");
+    }
+
+    
+
+    if(name1.match(/^[0-9]/g)){
+         errormsg1.innerHTML="*user name must contain only alphabets"
+        
+    }
+    else{
+        errormsg1.innerHTML="" 
     }
     
+
+}
+function validatename1(){
+    var name2=document.getElementById("text2").value;
+    
+
+
+    
+
+    if(name2.match(/^[0-9]/g)){
+         errormsg2.innerHTML="* name must contain only alphabets"
+        
+    }
+    else{
+        errormsg2.innerHTML=" " 
+    }
+    if(!isNaN(name2)){
+        document.getElementById("text2").value  =name2.replace(/^[0-9]/g, "");
+    }
+
+}
+function validatename4(){
+    var name4=document.getElementById("text4").value;
+      if(name4.match(/^[0-9]/g)){
+         errormsg4.innerHTML="*user name must contain only alphabets"
+        
+    }
+    else{
+        errormsg4.innerHTML=" " 
+    }
+    if(!isNaN(name4)){
+        document.getElementById("text4").value  =name4.replace(/^[0-9]/g, "");
+    }
+
 }
